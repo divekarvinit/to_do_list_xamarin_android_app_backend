@@ -1,25 +1,24 @@
 package com.msd.todolist.controller;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.msd.todolist.mapper.UserMasterMapper;
 import com.msd.todolist.pojo.UserMaster;
+import com.msd.todolist.service.LoginService;
 
 @RestController
 public class LoginController {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	LoginService loginService;
 	
-	@RequestMapping(value="/getLogin",method=RequestMethod.GET, headers={"Content-Type=application/json"})
-	public List<UserMaster> getLogin() throws Exception{
-		return jdbcTemplate.query("SELECT * FROM user_master", new UserMasterMapper());
+	@RequestMapping(value="/registerUser",method=RequestMethod.POST, headers={"Content-Type=application/json"})
+	public Map<String, Object> registerUser(@RequestBody UserMaster user) throws Exception{
+		return loginService.registerUser(user);
 	}
 }

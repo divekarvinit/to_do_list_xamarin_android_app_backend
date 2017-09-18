@@ -2,6 +2,8 @@ package com.msd.todolist.pojo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class UserMaster {
 
 	private String userName;
@@ -9,10 +11,16 @@ public class UserMaster {
 	private String password;
 	private String firstName;
 	private String lastName;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date joiningDate;
 	private String createdBy;
 	private String modifiedBy;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createdDate;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date modifiedDate;
 	
 	
