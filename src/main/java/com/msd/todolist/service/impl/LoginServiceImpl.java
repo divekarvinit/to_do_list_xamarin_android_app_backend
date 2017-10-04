@@ -113,4 +113,27 @@ public class LoginServiceImpl implements LoginService {
 		return userList.get(0);
 	}
 
+	@Override
+	public Map<String, Object> loginUser(UserMaster user) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		UserMaster userMaster = getUserFromUserNameAndPassword(user);
+		if(userMaster != null){
+			returnMap.put("success", "Y");
+			returnMap.put("userObject", user);
+		} else {
+			returnMap.put("success", "N");
+			returnMap.put("userObject", null);
+		}
+		return returnMap;
+	}
+
+	private UserMaster getUserFromUserNameAndPassword(UserMaster user) {
+		String queryForUsername = "SELECT * FROM user_master where user_name = ? and password = ?";
+		List<UserMaster> userList = jdbcTemplate.query(queryForUsername,new Object[] {user.getUserName(), user.getPassword()}, new UserMasterMapper());
+		if ( userList.isEmpty() ){
+			return null;
+		}
+		return userList.get(0);
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.msd.todolist.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,12 @@ public class LoginController {
 	@RequestMapping(value="/registerUser",method=RequestMethod.POST, headers={"Content-Type=application/json"})
 	public Map<String, Object> registerUser(@RequestBody UserMaster user) throws Exception{
 		return loginService.registerUser(user);
+	}
+	
+	@RequestMapping(value="/loginUser",method=RequestMethod.POST, headers={"Content-Type=application/json"})
+	public Map<String, Object> loginUser(@RequestBody UserMaster user) throws Exception{
+		HashMap<String, Object> returnmap = new HashMap<String, Object>();
+		returnmap.put("success","Y");
+		return loginService.loginUser(user);
 	}
 }

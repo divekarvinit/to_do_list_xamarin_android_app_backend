@@ -7,4 +7,6 @@ import com.msd.todolist.pojo.UserMaster;
 public interface LoginService {
 
 	public Map<String, Object> registerUser(UserMaster user);
+
+	public Map<String, Object> loginUser(UserMaster user);
 }
