@@ -21,6 +21,7 @@ import com.msd.todolist.mapper.UserMasterMapper;
 import com.msd.todolist.pojo.UserMaster;
 import com.msd.todolist.service.LoginService;
 
+/* LoginServiceImpl by VINIT DIVEKAR- 17960822 STARTS*/
 @Service
 public class LoginServiceImpl implements LoginService {
 
@@ -135,5 +136,5 @@ public class LoginServiceImpl implements LoginService {
 		}
 		return userList.get(0);
 	}
-
 }
+/* LoginServiceImpl by VINIT DIVEKAR- 17960822 ENDS*/

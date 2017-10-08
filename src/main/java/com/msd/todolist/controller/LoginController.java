@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.msd.todolist.pojo.UserMaster;
 import com.msd.todolist.service.LoginService;
 
+/* LoginController by VINIT DIVEKAR- 17960822 STARTS*/
 @RestController
 public class LoginController {
 
@@ -30,3 +31,5 @@ public class LoginController {
 		return loginService.loginUser(user);
 	}
 }
+
+/* Controller by VINIT DIVEKAR- 17960822 ENDS*/

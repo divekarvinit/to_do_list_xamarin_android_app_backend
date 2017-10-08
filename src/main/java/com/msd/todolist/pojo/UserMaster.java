@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+/* UserMaster pojo by VINIT DIVEKAR- 17960822 STARTS*/ 
 public class UserMaster {
 
 	private String userName;
@@ -104,3 +105,4 @@ public class UserMaster {
 	}
 	
 }
+/* UserMaster pojo by VINIT DIVEKAR- 17960822 ENDS*/

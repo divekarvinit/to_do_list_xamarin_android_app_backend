@@ -6,12 +6,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class UserFriendship {
 
-	private int userFriendshipId;
+	private Integer userFriendshipId;
 	private String userNameInitiator;
 	private String userNameFriend;
 	private String friendshipStatus;
-	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	
 	private String createdBy;
 	private String modifiedBy;
@@ -27,7 +25,7 @@ public class UserFriendship {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public UserFriendship(int userFriendshipId, String userNameInitiator, String userNameFriend, String friendshipStatus,
+	public UserFriendship(Integer userFriendshipId, String userNameInitiator, String userNameFriend, String friendshipStatus,
 			String createdBy, String modifiedBy, Date createdDate, Date modifiedDate) {
 		super();
 		this.userFriendshipId = userFriendshipId;
@@ -42,7 +40,7 @@ public class UserFriendship {
 	public int getUserFriendshipId() {
 		return userFriendshipId;
 	}
-	public void setUserFriendshipId(String userFriendshipId) {
+	public void setUserFriendshipId(Integer userFriendshipId) {
 		this.userFriendshipId = userFriendshipId;
 	}
 	public String getUserNameInitiator() {
